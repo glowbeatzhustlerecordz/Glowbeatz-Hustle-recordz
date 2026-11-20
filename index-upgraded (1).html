@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="GlowBeatz Hustle Records — Fuel the Hustle. Feel the Glow. Discover, develop, brand and promote creative talent.">
+  <title>GlowBeatz Hustle Records | Fuel the Hustle. Feel the Glow.</title>
+  <style>
+    :root{--gold:#f5c542;--gold2:#d99e16;--bg:#080808;--panel:#141414;--muted:#b9b9b9;--line:#303030;--white:#f7f7f7}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--white);line-height:1.65}
+    a{color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.3px;font-size:clamp(17px,3vw,23px);text-decoration:none;white-space:nowrap}
+    .brand span,.gold{color:var(--gold)}
+    nav{display:flex;align-items:center;gap:20px}
+    nav a{text-decoration:none;color:#ddd;font-size:14px;font-weight:700}
+    nav a:hover{color:var(--gold)}
+    .menu-btn{display:none;background:none;color:white;border:1px solid #555;border-radius:8px;padding:8px 12px;font-size:22px}
+    .hero{min-height:610px;display:grid;place-items:center;text-align:center;padding:90px 0;background:radial-gradient(ellipse at 50% 30%,#493600 0%,#1b1507 28%,#080808 68%)}
+    .eyebrow{display:inline-block;border:1px solid #8b6a13;color:var(--gold);border-radius:30px;padding:6px 15px;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    h1{font-size:clamp(48px,10vw,100px);line-height:1.03;letter-spacing:-3px;margin:22px 0}
+    .hero p{max-width:740px;margin:0 auto 28px;color:#d0d0d0;font-size:clamp(16px,2.5vw,20px)}
+    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;text-decoration:none;border:1px solid var(--gold);background:var(--gold);color:#090909;font-weight:800;padding:13px 23px;border-radius:30px;transition:.2s}
+    .btn:hover{transform:translateY(-2px);background:#ffda69}
+    .btn.outline{background:transparent;color:var(--gold)}
+    section{padding:78px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 38px}
+    .section-head h2{font-size:clamp(29px,5vw,43px);color:var(--gold);line-height:1.2;margin-bottom:12px}
+    .section-head p,.muted{color:var(--muted)}
+    .intro{max-width:850px;margin:auto;text-align:center;color:#ccc;font-size:18px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{background:linear-gradient(145deg,#191919,#101010);border:1px solid var(--line);border-radius:16px;padding:25px}
+    .card .symbol{font-size:28px;margin-bottom:12px}
+    .card h3{color:var(--gold);font-size:20px;margin-bottom:8px}
+    .card p{color:#bdbdbd;font-size:15px}
+    .dark-section{background:#101010;border-top:1px solid #222;border-bottom:1px solid #222}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .step{border:1px solid #4a3a12;background:#17140c;padding:20px;border-radius:13px;text-align:center}
+    .step strong{display:block;color:var(--gold);font-size:18px;margin-bottom:5px}
+    .membership-note{max-width:850px;margin:25px auto 0;text-align:center;color:#bdbdbd;font-size:14px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .list{padding-left:20px;color:#ccc}
+    .list li{margin:8px 0}
+    .form-card{background:#141414;border:1px solid #3b321c;border-radius:16px;padding:25px}
+    label{display:block;font-weight:700;font-size:13px;margin:13px 0 6px;color:#ddd}
+    input,select,textarea{width:100%;padding:13px;border-radius:9px;border:1px solid #444;background:#090909;color:white;font:inherit}
+    input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    textarea{min-height:105px;resize:vertical}
+    .form-card .btn{width:100%;margin-top:16px;cursor:pointer;font-size:15px}
+    .small{font-size:12px;color:#999;margin-top:10px}
+    .contact-box{text-align:center;background:linear-gradient(135deg,#211a08,#101010);border:1px solid #5a4512;border-radius:18px;padding:42px 22px}
+    .contact-box p{color:#ccc;margin:10px auto 22px;max-width:680px}
+    .contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .contact-links a{color:var(--gold);text-decoration:none}
+    footer{border-top:1px solid #292929;padding:28px 0;text-align:center;color:#888;font-size:13px}
+    footer strong{color:var(--gold)}
+    @media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}nav{gap:12px}nav a{font-size:12px}}
+    @media(max-width:620px){
+      .nav-wrap{min-height:68px}.menu-btn{display:block}
+      nav{display:none;position:absolute;top:68px;left:0;right:0;background:#090909;padding:18px 4%;border-bottom:1px solid #333;flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}nav a{font-size:15px;padding:5px 0}
+      .hero{min-height:560px;padding:70px 0}h1{letter-spacing:-1.5px}
+      section{padding:60px 0}.grid,.split{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}
+      .card{padding:21px}
+    }
+    @media(max-width:380px){.steps{grid-template-columns:1fr}.brand{font-size:16px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav-wrap">
+    <a class="brand" href="#home">GLOW<span>BEATZ</span> HUSTLE RECORDS</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#about">About</a><a href="#departments">Departments</a><a href="#programmes">Programmes</a>
+      <a href="#membership">Membership</a><a href="#partners">Partners</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <span class="eyebrow">Discover · Develop · Brand · Promote</span>
+      <h1>GLOW<span class="gold">BEATZ</span><br>HUSTLE RECORDS</h1>
+      <p><strong class="gold">Fuel the Hustle. Feel the Glow.</strong><br>
+      A creative entertainment, talent development, promotion, distribution and digital media platform building pathways for talent to grow into opportunity.</p>
+      <div class="actions">
+        <a class="btn" href="#membership">Join the Hustle</a>
+        <a class="btn outline" href="#partners">Partner with Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><h2>More Than a Record Label</h2><p>A home for talent, creativity and purposeful hustle.</p></div>
+      <p class="intro">GlowBeatz Hustle Records is a creative platform focused on discovering, developing, branding and promoting emerging talent. We bring creatives, audiences, organisations and opportunities together through entertainment, skills development, events and digital media. Our ambition is to help young people turn their creativity into meaningful careers and contribute to stronger communities.</p>
+    </div>
+  </section>
+
+  <section class="dark-section" id="departments">
+    <div class="container">
+      <div class="section-head"><h2>Our Creative Departments</h2><p>Different talents. One platform. Shared opportunity.</p></div>
+      <div class="grid">
+        <article class="card"><div class="symbol">🎵</div><h3>Music & Recording</h3><p>Artist development, songwriting, recording projects, music promotion and distribution support.</p></article>
+        <article class="card"><div class="symbol">💃</div><h3>Dance & Choreography</h3><p>Dance crews, choreography, dance battles, cultural performances and bookings.</p></article>
+        <article class="card"><div class="symbol">🎬</div><h3>Film & Digital Arts</h3><p>Acting, video production, short films, photography and digital storytelling.</p></article>
+        <article class="card"><div class="symbol">🎨</div><h3>Visual Arts & Design</h3><p>Graphic design, illustration, fashion, painting, creative branding and visual expression.</p></article>
+        <article class="card"><div class="symbol">🎤</div><h3>Performing Arts</h3><p>Poetry, comedy, presenting, acting, spoken word and live performance.</p></article>
+        <article class="card"><div class="symbol">📣</div><h3>Marketing & Events</h3><p>Talent showcases, concerts, auditions, campaigns, event planning and audience engagement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="programmes">
+    <div class="container">
+      <div class="section-head"><h2>Programmes & Opportunities</h2><p>Practical ways to discover talent, build skills and create visibility.</p></div>
+      <div class="grid">
+        <article class="card"><div class="symbol">🌟</div><h3>Talent Discovery</h3><p>Auditions, open calls and community scouting to identify emerging creatives.</p></article>
+        <article class="card"><div class="symbol">🚀</div><h3>Artist Development</h3><p>Guidance, creative planning, branding and opportunities to build a professional profile.</p></article>
+        <article class="card"><div class="symbol">🏆</div><h3>Showcases & Battles</h3><p>Platforms for artists and performers to demonstrate their abilities before audiences.</p></article>
+        <article class="card"><div class="symbol">🎓</div><h3>GlowBeatz Academy</h3><p>A developing training initiative for creative skills, mentorship and entrepreneurship.</p></article>
+        <article class="card"><div class="symbol">📱</div><h3>Digital Promotion</h3><p>Content and media opportunities to help creatives build visibility and reach audiences.</p></article>
+        <article class="card"><div class="symbol">🤝</div><h3>Community Projects</h3><p>Creative activities designed to connect young people, communities and local partners.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="membership">
+    <div class="container">
+      <div class="section-head"><h2>Join the GlowBeatz Hustle</h2><p>Become part of a growing creative community.</p></div>
+      <div class="steps">
+        <div class="step"><strong>01 · Discover</strong><span class="muted">Tell us what you do.</span></div>
+        <div class="step"><strong>02 · Develop</strong><span class="muted">Build your skills and profile.</span></div>
+        <div class="step"><strong>03 · Brand</strong><span class="muted">Shape your creative identity.</span></div>
+        <div class="step"><strong>04 · Promote</strong><span class="muted">Connect with audiences and opportunities.</span></div>
+      </div>
+      <p class="membership-note">Membership enquiries are open to musicians, dancers, visual artists, filmmakers, actors, poets, comedians, producers and other creative personnel. Submitting an enquiry does not guarantee selection, paid work or access to a particular service. Programme details and fees are confirmed directly by GlowBeatz.</p>
+      <div class="split" style="margin-top:35px">
+        <div>
+          <h3 class="gold" style="font-size:24px;margin-bottom:12px">Who can apply?</h3>
+          <ul class="list">
+            <li>Singers, rappers, songwriters, producers and DJs</li>
+            <li>Solo dancers, dance crews and choreographers</li>
+            <li>Graphic designers, painters and fashion creatives</li>
+            <li>Actors, poets, comedians and presenters</li>
+            <li>Photographers, videographers and digital creators</li>
+          </ul>
+        </div>
+        <form class="form-card" id="joinForm">
+          <h3 class="gold" style="font-size:22px">Creative Membership Enquiry</h3>
+          <label for="fullName">Full name</label><input id="fullName" name="fullName" required maxlength="80" placeholder="Your full name">
+          <label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" required type="tel" maxlength="30" placeholder="Your contact number">
+          <label for="discipline">Creative discipline</label>
+          <select id="discipline" name="discipline" required>
+            <option value="">Choose your discipline</option><option>Music</option><option>Dance</option><option>Visual Arts & Design</option><option>Film & Digital Arts</option><option>Performing Arts</option><option>Other creative field</option>
+          </select>
+          <label for="location">Town / community</label><input id="location" name="location" maxlength="80" placeholder="e.g. Kafue">
+          <label for="message">Tell us briefly about your talent</label><textarea id="message" name="message" maxlength="600" placeholder="What do you do, and what are you hoping to develop?"></textarea>
+          <button class="btn" type="submit">Send Membership Enquiry via WhatsApp</button>
+          <p class="small">This form opens WhatsApp with your message ready to send. It does not store your details on this website.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners">
+    <div class="container">
+      <div class="section-head"><h2>Build With Us</h2><p>We welcome meaningful collaboration with organisations that believe in creative potential and youth opportunity.</p></div>
+      <div class="grid">
+        <article class="card"><div class="symbol">🏢</div><h3>Corporate Partners</h3><p>Support talent programmes, events, equipment, skills development and community initiatives.</p></article>
+        <article class="card"><div class="symbol">🏛️</div><h3>Public Institutions</h3><p>Explore collaboration around youth empowerment, arts, culture and local development.</p></article>
+        <article class="card"><div class="symbol">🏫</div><h3>Schools & Communities</h3><p>Create pathways for young people to participate, learn, perform and grow.</p></article>
+      </div>
+      <p class="membership-note">For sponsorship, grants, institutional collaboration or event partnerships, contact us with your organisation's details and the opportunity you would like to discuss.</p>
+    </div>
+  </section>
+
+  <section class="dark-section" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <span class="eyebrow">Let's build something meaningful</span>
+        <h2 style="font-size:clamp(30px,5vw,44px);margin:16px 0;color:var(--gold)">Your Talent. Your Hustle. Your Glow.</h2>
+        <p>Are you a creative, sponsor, partner, institution or supporter? Get in touch and let's explore how we can work together.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:glowbeatzhustlerecordz@gmail.com">Email GlowBeatz</a>
+          <a class="btn outline" href="https://wa.me/260979289288" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:markhakweenda6@gmail.com">markhakweenda6@gmail.com</a>
+          <span class="muted">|</span><a href="mailto:glowbeatzhustlerecordz@gmail.com">glowbeatzhustlerecordz@gmail.com</a>
+        </div>
+        <p style="margin:12px auto 0">Phone: 0979 289 288 · Zambia</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> <strong>GlowBeatz Hustle Records</strong>. All rights reserved.</p>
+    <p>Fuel the Hustle. Feel the Glow.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn');
+  const nav=document.getElementById('mainNav');
+  menuBtn.addEventListener('click',()=>{
+    const opened=nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',String(opened));
+  });
+  nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');
+  }));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('joinForm').addEventListener('submit',function(event){
+    event.preventDefault();
+    const data=new FormData(this);
+    const message=[
+      'Hello GlowBeatz Hustle Records. I would like to enquire about creative membership.',
+      'Name: '+data.get('fullName'),
+      'Phone: '+data.get('phone'),
+      'Discipline: '+data.get('discipline'),
+      'Town/community: '+(data.get('location')||'Not provided'),
+      'About my talent: '+(data.get('message')||'Not provided')
+    ].join('\n');
+    window.open('https://wa.me/260979289288?text='+encodeURIComponent(message),'_blank','noopener');
+  });
+</script>
+</body>
+</html>
